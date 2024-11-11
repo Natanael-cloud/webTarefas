@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+    <div class="container">
+        <h1>Gerenciador de Tarefas</h1>
+        <div class="entrada-tarefa">
+            <input type="text" id="titulo-tarefa" placeholder="Título da tarefa">
+            <input type="text" id="categoria-tarefa" placeholder="Categoria (ex: Trabalho, Estudo)">
+            <input type="date" id="prazo-tarefa" placeholder="Prazo">
+            <button id="botao-adicionar-tarefa">Adicionar Tarefa</button>
+        </div>
+        <input type="text" id="barra-de-busca" placeholder="Buscar tarefa...">
+
+        <div class="colunas">
+            <div class="coluna" id="para-fazer">
+                <h2>Para Fazer</h2>
+                <ul class="lista-tarefas"></ul>
+            </div>
+            <div class="coluna" id="em-progresso">
+                <h2>Em Progresso</h2>
+                <ul class="lista-tarefas"></ul>
+            </div>
+            <div class="coluna" id="concluido">
+                <h2>Concluído</h2>
+                <ul class="lista-tarefas"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>
