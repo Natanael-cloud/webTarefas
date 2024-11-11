@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.entrada-tarefa {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.entrada-tarefa input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#botao-adicionar-tarefa {
+  padding: 10px 20px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#botao-adicionar-tarefa:hover {
+  background-color: #218838;
+}
+
+.colunas {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.coluna {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.lista-tarefas {
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+.lista-tarefas li {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.lista-tarefas li[draggable="true"] {
+  background-color: #e3f2fd;
+}
+
+.lista-tarefas li.destaque {
+  background-color: rgba(255, 99, 71, 0.3);
+}
