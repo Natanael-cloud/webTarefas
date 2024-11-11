@@ -118,15 +118,16 @@ h1 {
   cursor: pointer;
 }
 
-/* Efeito de Alerta Estroboscópico */
+/* Efeito de alerta estroboscópico */
 .alerta-estroboscopico {
-  animation: alerta 0.5s infinite alternate;
+  animation: piscar 0.5s alternate infinite;
 }
 
-@keyframes alerta {
-  from { background-color: #ff0000; }
-  to { background-color: #ffcccb; }
+@keyframes piscar {
+  0% { background-color: #ff4d4d; }
+  100% { background-color: #ffb3b3; }
 }
+
 
 .oculto {
   display: none;
