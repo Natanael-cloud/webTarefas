@@ -32,6 +32,26 @@
             </div>
         </div>
     </div>
+    <!-- Modal para Detalhes da Tarefa -->
+    <div id="modal-tarefa" class="modal oculto">
+          <div class="conteudo-modal">
+              <span id="fechar-modal" class="fechar">&times;</span>
+              <h2 id="titulo-modal"></h2>
+              <p id="detalhes-modal"></p>
+
+            <!-- Observações -->
+              <label for="observacoes">Observações:</label>
+              <textarea id="observacoes" placeholder="Adicione observações..."></textarea>
+
+            <!-- Horário da Tarefa -->
+              <label for="horario-tarefa">Horário da Tarefa:</label>
+              <input type="time" id="horario-tarefa">
+
+            <!-- Botão de Despertador -->
+            <button id="definir-despertador">Definir Despertador</button>
+          </div>
+    </div>
+
     <script src="index.js"></script>
 </body>
 </html>
