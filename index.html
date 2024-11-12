@@ -8,50 +8,50 @@
 </head>
 <body>
     <div class="container">
-        <h1>Gerenciador de Tarefas</h1>
-        <div class="entrada-tarefa">
-            <input type="text" id="titulo-tarefa" placeholder="Título da tarefa">
-            <input type="text" id="categoria-tarefa" placeholder="Categoria (ex: Trabalho, Estudo)">
-            <input type="date" id="prazo-tarefa" placeholder="Prazo">
-            <button id="botao-adicionar-tarefa">Adicionar Tarefa</button>
-        </div>
-        <input type="text" id="barra-de-busca" placeholder="Buscar tarefa...">
+        <header>
+            <h1>Gerenciador de Tarefas</h1>
+        </header>
 
-        <div class="colunas">
-            <div class="coluna" id="para-fazer">
-                <h2>Para Fazer</h2>
-                <ul class="lista-tarefas"></ul>
+        <section class="entrada-container">
+            <div class="entrada-tarefa">
+                <label for="titulo-tarefa">Título</label>
+                <input type="text" id="titulo-tarefa" placeholder="Título da tarefa">
+                
+                <label for="categoria-tarefa">Categoria</label>
+                <input type="text" id="categoria-tarefa" placeholder="Categoria (ex: Trabalho, Estudo)">
+                
+                <label for="prazo-tarefa">Prazo</label>
+                <input type="datetime-local" id="prazo-tarefa">
+                
+                <button id="botao-adicionar-tarefa">Adicionar Tarefa</button>
             </div>
-            <div class="coluna" id="em-progresso">
-                <h2>Em Progresso</h2>
-                <ul class="lista-tarefas"></ul>
+            <div class="barra-de-busca-container">
+                <label for="barra-de-busca">Buscar Tarefas</label>
+                <input type="text" id="barra-de-busca" placeholder="Buscar tarefa...">
             </div>
-            <div class="coluna" id="concluido">
-                <h2>Concluído</h2>
-                <ul class="lista-tarefas"></ul>
-            </div>
-        </div>
-    </div>
-    <!-- Modal para Detalhes da Tarefa -->
-    <div id="modal-tarefa" class="modal oculto">
-          <div class="conteudo-modal">
-              <span id="fechar-modal" class="fechar">&times;</span>
-              <h2 id="titulo-modal"></h2>
-              <p id="detalhes-modal"></p>
+        </section>
 
-            <!-- Observações -->
-              <label for="observacoes">Observações:</label>
-              <textarea id="observacoes" placeholder="Adicione observações..."></textarea>
+        <section class="tarefas-container">
+            <h2>Para Fazer</h2>
+            <ul id="lista-tarefas" class="lista-tarefas"></ul>
+        </section>
 
-            <!-- Horário da Tarefa -->
-              <label for="horario-tarefa">Horário da Tarefa:</label>
-              <input type="time" id="horario-tarefa">
+        <section class="tarefas-container">
+            <h2>Em Andamento</h2>
+            <ul id="lista-tarefas-andamento" class="lista-tarefas"></ul>
+        </section>
 
-            <!-- Botão de Despertador -->
-            <button id="definir-despertador">Definir Despertador</button>
-          </div>
+        <section class="tarefas-container">
+            <h2>Feitas</h2>
+            <ul id="lista-tarefas-feitas" class="lista-tarefas"></ul>
+        </section>
     </div>
 
+    <div id="notificacao" class="notificacao"></div>
+    <!-- Alarme sonoro -->
+    <audio id="alarme-som" src="alarme.mp3" preload="auto"></audio>
+    
     <script src="index.js"></script>
 </body>
 </html>
+
