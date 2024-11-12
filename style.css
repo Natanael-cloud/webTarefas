@@ -1,136 +1,235 @@
+/* Estilo Global */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  background-color: #1b1b2f;
+  color: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f5f5f5;
-}
-
-.container {
-  width: 90%;
-  max-width: 800px;
-  background-color: #fff;
+  min-height: 100vh;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+/* Container Principal */
+.container {
+  width: 100%;
+  max-width: 700px;
+  background-color: #0f0f3d;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), 0 0 10px rgba(0, 255, 255, 0.3);
+  color: #e0e0ff;
+}
+
+/* Estilo do Cabeçalho */
+header h1 {
+  font-size: 2em;
   text-align: center;
+  color: #00d4ff;
+  text-shadow: 0 0 8px #00d4ff;
   margin-bottom: 20px;
 }
 
-.entrada-tarefa {
+/* Entrada de Dados */
+.entrada-container {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #151538;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 200, 200, 0.4);
   margin-bottom: 20px;
 }
 
-.entrada-tarefa input {
-  flex: 1;
+.entrada-container label {
+  font-size: 1em;
+  color: #00e6e6;
+  margin-bottom: 5px;
+}
+
+.entrada-container input, .entrada-container button {
+  width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  font-size: 1em;
+  color: #f5f5f5;
+  background-color: #222244;
+  border: 2px solid #00d4ff;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.entrada-container input:focus {
+  border-color: #00ff99;
 }
 
 #botao-adicionar-tarefa {
-  padding: 10px 20px;
-  border: none;
-  background-color: #28a745;
-  color: white;
-  border-radius: 4px;
+  background-color: #00d4ff;
+  color: #1b1b2f;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 #botao-adicionar-tarefa:hover {
-  background-color: #218838;
+  background-color: #00ff99;
 }
 
-.colunas {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.coluna {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.lista-tarefas {
-  list-style-type: none;
+/* Barra de Busca */
+.barra-de-busca-container {
   margin-top: 10px;
 }
 
-.lista-tarefas li {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  background-color: #f9f9f9;
-  cursor: pointer;
-}
-
-.lista-tarefas li[draggable="true"] {
-  background-color: #e3f2fd;
-}
-
-.lista-tarefas li.destaque {
-  background-color: rgba(255, 99, 71, 0.3);
-}
-
-/* Estilo do Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
+#barra-de-busca {
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.conteudo-modal {
-  background-color: #fff;
-  margin: 10% auto;
-  padding: 20px;
+  padding: 10px;
+  font-size: 1em;
+  background-color: #222244;
+  color: #00d4ff;
+  border: 2px solid #00d4ff;
   border-radius: 8px;
-  width: 80%;
-  max-width: 500px;
-  position: relative;
+  outline: none;
+  transition: border-color 0.3s;
 }
 
-.fechar {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
+#barra-de-busca:focus {
+  border-color: #00ff99;
+}
+
+/* Lista de Tarefas */
+.tarefas-container {
+  background-color: #151538;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 200, 200, 0.4);
+}
+
+.tarefas-container h2 {
+  font-size: 1.5em;
+  color: #00d4ff;
+  margin-bottom: 10px;
+  text-align: center;
+  text-shadow: 0 0 8px #00d4ff;
+}
+
+.lista-tarefas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-tarefas li {
+  background-color: #222244;
+  border: 2px solid #00d4ff;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #e0e0ff;
+  transition: transform 0.3s;
   cursor: pointer;
 }
 
-/* Efeito de alerta estroboscópico */
-.alerta-estroboscopico {
-  animation: piscar 0.5s alternate infinite;
+.lista-tarefas li:hover {
+  transform: scale(1.03);
+  border-color: #00ff99;
 }
 
-@keyframes piscar {
-  0% { background-color: #ff4d4d; }
-  100% { background-color: #ffb3b3; }
+/* Botões de Controle */
+.lista-tarefas li button {
+  background-color: transparent;
+  border: none;
+  color: #00e6e6;
+  font-size: 1em;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
+.lista-tarefas li button:hover {
+  color: #00ff99;
+}
 
-.oculto {
+.lista-tarefas li .botao-editar::before {
+  content: "✏️ ";
+}
+
+.lista-tarefas li .botao-excluir::before {
+  content: "🗑️ ";
+}
+
+/* Notificação */
+.notificacao {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #00d4ff;
+  color: #1b1b2f;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+  font-weight: bold;
   display: none;
+  z-index: 1000;
+  transition: transform 0.5s ease;
+}
+
+.notificacao.show {
+  display: block;
+  transform: translateX(0);
+}
+
+/* Tarefa Expandida */
+.tarefa-expandida {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #151538;
+  border-radius: 8px;
+}
+
+.tarefa-expandida textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: #222244;
+  color: #00d4ff;
+  border: 2px solid #00d4ff;
+  border-radius: 8px;
+  outline: none;
+  resize: none;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+.tarefa-expandida textarea:focus {
+  border-color: #00ff99;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  header h1 {
+      font-size: 1.5em;
+  }
+
+  .entrada-container,
+  .tarefas-container {
+      padding: 15px;
+  }
+
+  #botao-adicionar-tarefa,
+  #barra-de-busca {
+      font-size: 0.9em;
+      padding: 8px;
+  }
 }
 
 
